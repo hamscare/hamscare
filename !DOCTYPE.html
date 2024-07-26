@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احصل على خصم</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>احصل على خصم 20%</h1>
+        <form id="discountForm">
+            <input type="text" id="clientName" placeholder="أدخل اسم العميل" required>
+            <br>
+            <button type="button" onclick="generateCoupon()">احصل على الخصم</button>
+        </form>
+        <div id="couponSection" style="display: none; margin-top: 20px;">
+            <h2>قسيمة الخصم</h2>
+            <p id="couponImage"></p>
+        </div>
+    </div>
+
+    <script>
+        function generateCoupon() {
+            var name = document.getElementById("clientName").value;
+            if (name) {
+                var couponSection = document.getElementById("couponSection");
+                var couponImage = document.getElementById("couponImage");
+
+                couponImage.innerHTML = '<img src="https://www.raed.net/img?id=909317" alt="قسيمة خصم" style="max-width: 100%;">';
+                couponSection.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
